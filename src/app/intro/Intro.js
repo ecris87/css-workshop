@@ -1,5 +1,5 @@
 import React from 'react';
-import { Level, LevelList } from './Level';
+import { Level, LevelList } from './LevelList';
 import logo from '../../images/ninja.svg';
 import styled from 'styled-components';
 
