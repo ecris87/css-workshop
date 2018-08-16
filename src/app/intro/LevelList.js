@@ -15,7 +15,6 @@ export const Level = styled.li`
 
   a {
     color: deepskyblue;
-    background-image: none;
 
     &:active {
       color: lightskyblue;

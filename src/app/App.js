@@ -6,6 +6,7 @@ import Level2 from './levels/Level2';
 import Level3 from './levels/Level3';
 import Level4 from './levels/Level4';
 import Level5 from './levels/Level5';
+import Footer from './common/Footer';
 
 class App extends Component {
   render() {
@@ -18,6 +19,7 @@ class App extends Component {
           <Route path="/level3" component={Level3} />
           <Route path="/level4" component={Level4} />
           <Route path="/level5" component={Level5} />
+          <Footer />
         </main>
       </Router>
     );

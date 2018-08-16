@@ -7,3 +7,13 @@ body {
   background-color: ivory;
   font-family: 'Patrick Hand SC', sans-serif;
 }
+
+/* override some paper.css defaults */
+
+img {
+  display: inline-block;
+}
+
+a {
+  background: none;
+}
