@@ -11,6 +11,15 @@ const Footer = styled.footer`
   span {
     padding-right: 10px;
   }
+
+  .app__logo {
+    width: 150px;
+    border: 0 none;
+  }
+
+  .app__logo--alt {
+    width: 32px;
+  }
 `;
 
 const AppFooter = ({ location }) => {
@@ -19,7 +28,7 @@ const AppFooter = ({ location }) => {
       {location && location.pathname !== '/' ? (
         <Link to="/">
           <span>Go back to homepage</span>
-          <img className="app__logo" src={logo} alt="logo" />
+          <img className="app__logo app__logo--alt" src={logo} alt="logo" />
         </Link>
       ) : (
         <img className="app__logo" src={logo} alt="logo" />

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Level = styled.li`
-  font-size: 3rem;
+  font-size: 2.5rem;
 
   &:before {
     content: ' 👉'; /* override papercss default style */
