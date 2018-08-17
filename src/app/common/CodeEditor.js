@@ -5,7 +5,7 @@ import 'brace/mode/html';
 import 'brace/theme/textmate';
 import 'brace/ext/language_tools';
 
-const CodeEditor = ({ mode, onChange, defaultValue, height, readOnly }) => {
+const CodeEditor = ({ mode, onChange, defaultValue, value, height, readOnly, highlightActiveLine }) => {
   return (
     <AceEditor
       // configurable props
@@ -13,7 +13,9 @@ const CodeEditor = ({ mode, onChange, defaultValue, height, readOnly }) => {
       onChange={onChange}
       defaultValue={defaultValue}
       readOnly={readOnly}
+      value={value}
       height={height}
+      highlightActiveLine={highlightActiveLine}
       // default props
       theme="textmate"
       name="css-code-editor"
@@ -21,7 +23,6 @@ const CodeEditor = ({ mode, onChange, defaultValue, height, readOnly }) => {
       debounceChangePeriod={500}
       enableBasicAutocompletion
       enableLiveAutocompletion
-      cursorStart={2}
       editorProps={{ $blockScrolling: Infinity }}
     />
   );

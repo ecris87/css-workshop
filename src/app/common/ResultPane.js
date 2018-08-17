@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import classnames from 'classnames';
+import TrustedHtml from '../common/TrustedHtml';
 
 const Pane = styled.div`
   height: 100%;
@@ -15,7 +16,7 @@ const Badge = styled.span`
   top: 20px;
 `;
 
-const ResultPane = ({ status }) => {
+const ResultPane = ({ status, html }) => {
   const paneClassName = classnames({
     'border border-3 border-primary': true,
     'alert-success': status && status.isValid,
@@ -29,12 +30,7 @@ const ResultPane = ({ status }) => {
   return (
     <Pane status={status} className={paneClassName}>
       {status && <Badge className={badgeClassName}>Excellent!</Badge>}
-      BLA
-      <br />
-      BLA
-      <br />
-      BLA
-      <br />
+      <TrustedHtml html={html} />
     </Pane>
   );
 };

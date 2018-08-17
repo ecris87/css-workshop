@@ -1,16 +1,19 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import CodeEditor from '../common/CodeEditor';
 import Spacing from '../common/Spacing';
 
 const TEXT_HTML = `/* index.html */
 `;
 
-const HtmlCodeEditor = ({ defaultValue }) => {
-  return (
-    <Spacing>
-      <CodeEditor mode="html" defaultValue={TEXT_HTML + defaultValue} height="300px" readOnly />
-    </Spacing>
-  );
-};
+class HtmlCodeEditor extends PureComponent {
+  render() {
+    const { value } = this.props;
+    return (
+      <Spacing>
+        <CodeEditor mode="html" value={TEXT_HTML + value} height="300px" readOnly highlightActiveLine={false} />
+      </Spacing>
+    );
+  }
+}
 
 export default HtmlCodeEditor;
