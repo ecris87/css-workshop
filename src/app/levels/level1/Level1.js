@@ -14,8 +14,10 @@ class Level1 extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentExerciseIndex: 0
+      currentExerciseIndex: 0,
+      cssCode: null
     };
+    this.isValid = false;
   }
 
   handleExerciseSelection = event => {
@@ -24,8 +26,18 @@ class Level1 extends Component {
     });
   };
 
-  handleCssCodeChange = newValue => {
-    console.log('css change', newValue);
+  setValidationResult = errors => {
+    console.log(errors);
+    this.isValid = errors.length === 0;
+  };
+
+  handleCssCodeChange = cssCode => {
+    if (this.isValid) {
+      console.log('css change is valid:', cssCode);
+      this.setState({
+        cssCode: cssCode
+      });
+    }
   };
 
   render() {
@@ -42,12 +54,12 @@ class Level1 extends Component {
             value={this.state.currentExerciseIndex}
             exercises={SELECTOR_EXERCISES}
           />
-          <CssCodeEditor onChange={this.handleCssCodeChange} />
+          <CssCodeEditor onChange={this.handleCssCodeChange} onValidate={this.setValidationResult} />
           <HtmlCodeEditor value={currentExercise.html} />
         </div>
 
         <div className="col-6 col">
-          <ResultPane html={currentExercise.html} />
+          <ResultPane html={currentExercise.html} cssCode={this.state.cssCode} />
         </div>
       </div>
     );

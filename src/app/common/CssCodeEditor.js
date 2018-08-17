@@ -7,10 +7,17 @@ const TEXT_CSS = `/* style.css */
 
 class CssCodeEditor extends PureComponent {
   render() {
-    const { onChange } = this.props;
+    const { onChange, onValidate } = this.props;
     return (
       <Spacing>
-        <CodeEditor mode="css" onChange={onChange} defaultValue={TEXT_CSS} height="300px" highlightActiveLine />
+        <CodeEditor
+          mode="css"
+          onValidate={onValidate}
+          onChange={onChange}
+          defaultValue={TEXT_CSS}
+          height="300px"
+          highlightActiveLine
+        />
       </Spacing>
     );
   }

@@ -5,7 +5,7 @@ function createMarkup(html) {
 }
 
 const TrustedHtml = ({ html }) => {
-  return <div dangerouslySetInnerHTML={createMarkup(html)} />;
+  return <div className="trusted-html" dangerouslySetInnerHTML={createMarkup(html)} />;
 };
 
 export default TrustedHtml;
