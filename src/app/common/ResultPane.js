@@ -4,38 +4,6 @@ import classnames from 'classnames';
 import TrustedHtml from '../common/TrustedHtml';
 import PropTypes from 'prop-types';
 
-const Pane = styled.div`
-  height: 100%;
-  background: #fff;
-  padding: 1em;
-  position: relative;
-  
-  /* add green border if correct answer */ 
-  ${props =>
-    props.cssCodeAnswer &&
-    props.isCorrectAnswer &&
-    css`
-      border-color: #86a361;
-    `}
-
-  /* add red border if incorrect answer */ 
-  ${props =>
-    props.cssCodeAnswer &&
-    !props.isCorrectAnswer &&
-    css`
-      border-color: #a7342d;
-    `}
-
-  /* add css code if supplied */ 
-  .result-pane__html {
-    ${props =>
-      props.cssCodeAnswer &&
-      css`
-        ${props.cssCodeAnswer};
-      `};
-  }
-`;
-
 const Badge = styled.span`
   position: absolute;
   right: 20px;
@@ -46,6 +14,30 @@ const BADGE_VALUE = {
   correctAnswerMessages: ['Excellent', 'Nice', 'Awesome possum', 'Splendid'],
   incorrectAnswerMessages: ['Bummer', 'Nerts', 'Ouch', 'Not awesome']
 };
+
+const calcBorderColor = ({ cssCodeAnswer, isCorrectAnswer }) => {
+  if (cssCodeAnswer) {
+    return isCorrectAnswer ? '#86a361' : '#a7342d';
+  }
+  return '#41403e'; // TODO use ThemeProvider
+};
+
+const Pane = styled.div`
+  height: 100%;
+  background: #fff;
+  padding: 1em;
+  position: relative;
+  border-color: ${calcBorderColor};
+
+  /* add css code if supplied */
+  .result-pane__html {
+    ${props =>
+      props.cssCodeAnswer &&
+      css`
+        ${props.cssCodeAnswer};
+      `};
+  }
+`;
 
 class ResultPane extends PureComponent {
   static propTypes = {
