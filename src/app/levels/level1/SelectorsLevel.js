@@ -4,13 +4,13 @@ import HtmlCodeEditor from '../../common/HtmlCodeEditor';
 import ResultPane from '../../common/ResultPane';
 import styled from 'styled-components';
 import ExerciseSelection from '../../common/ExerciseSelection';
-import SELECTOR_EXERCISES from './level1Data';
+import SELECTOR_EXERCISES from './selectorExercises';
 
 const LevelTitle = styled.h3`
   margin: 0;
 `;
 
-class Level1 extends Component {
+class SelectorsLevel extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -76,4 +76,4 @@ class Level1 extends Component {
   }
 }
 
-export default Level1;
+export default SelectorsLevel;
