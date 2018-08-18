@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import styled from 'styled-components';
 import Intro from './intro/Intro';
-import Level1 from './levels/level1/Level1';
-import Level2 from './levels/Level2';
-import Level3 from './levels/Level3';
-import Level4 from './levels/Level4';
-import Level5 from './levels/Level5';
+import SelectorsLevel from './levels/level1/SelectorsLevel';
+import BoxModelLevel from './levels/level2/BoxModelLevel';
+import PositioningLevel from './levels/level3/PositioningLevel';
+import SpecificityLevel from './levels/level4/SpecificityLevel';
+import FlexboxLevel from './levels/level5/FlexboxLevel';
 import Footer from './common/Footer';
 
 const Content = styled.div`
@@ -20,11 +20,11 @@ class App extends Component {
         <main className="app">
           <Content>
             <Route exact path="/" component={Intro} />
-            <Route path="/level1" component={Level1} />
-            <Route path="/level2" component={Level2} />
-            <Route path="/level3" component={Level3} />
-            <Route path="/level4" component={Level4} />
-            <Route path="/level5" component={Level5} />
+            <Route path="/level1" component={SelectorsLevel} />
+            <Route path="/level2" component={BoxModelLevel} />
+            <Route path="/level3" component={PositioningLevel} />
+            <Route path="/level4" component={SpecificityLevel} />
+            <Route path="/level5" component={FlexboxLevel} />
           </Content>
           <Footer />
         </main>
