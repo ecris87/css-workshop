@@ -17,7 +17,7 @@ class Level1 extends Component {
       currentExerciseIndex: 0,
       cssCode: null
     };
-    this.isValid = false;
+    this.isValidCss = false;
   }
 
   handleExerciseSelection = event => {
@@ -28,11 +28,11 @@ class Level1 extends Component {
 
   setValidationResult = errors => {
     console.log(errors);
-    this.isValid = errors.length === 0;
+    this.isValidCss = errors.length === 0;
   };
 
   handleCssCodeChange = cssCode => {
-    if (this.isValid) {
+    if (this.isValidCss) {
       console.log('css change is valid:', cssCode);
       this.setState({
         cssCode: cssCode

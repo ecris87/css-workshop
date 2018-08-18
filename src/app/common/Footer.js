@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import logo from '../../images/ninja.svg';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const Footer = styled.footer`
   position: absolute;
@@ -35,6 +36,10 @@ const AppFooter = ({ location }) => {
       )}
     </Footer>
   );
+};
+
+AppFooter.propTypes = {
+  location: PropTypes.object
 };
 
 export default withRouter(AppFooter);
