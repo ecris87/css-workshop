@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import classnames from 'classnames';
 import TrustedHtml from '../common/TrustedHtml';
 import PropTypes from 'prop-types';
@@ -9,6 +9,31 @@ const Pane = styled.div`
   background: #fff;
   padding: 1em;
   position: relative;
+  
+  /* add green border if correct answer */ 
+  ${props =>
+    props.cssCodeAnswer &&
+    props.isCorrectAnswer &&
+    css`
+      border-color: #86a361;
+    `}
+
+  /* add red border if incorrect answer */ 
+  ${props =>
+    props.cssCodeAnswer &&
+    !props.isCorrectAnswer &&
+    css`
+      border-color: #a7342d;
+    `}
+
+  /* add css code if supplied */ 
+  .result-pane__html {
+    ${props =>
+      props.cssCodeAnswer &&
+      css`
+        ${props.cssCodeAnswer};
+      `};
+  }
 `;
 
 const Badge = styled.span`
@@ -24,40 +49,37 @@ const BADGE_VALUE = {
 
 class ResultPane extends PureComponent {
   static propTypes = {
-    status: PropTypes.shape({
-      isCorrectAnswer: PropTypes.bool
-    }),
-    cssCode: PropTypes.string,
+    isCorrectAnswer: PropTypes.bool,
+    cssCodeAnswer: PropTypes.string,
     html: PropTypes.string
   };
 
   render() {
-    const { status, html, cssCode } = this.props;
+    const { html, cssCodeAnswer, isCorrectAnswer } = this.props;
 
-    const paneClassName = classnames({
-      'result-pane border border-3 border-primary': true,
-      'alert-success': status && status.isCorrectAnswer,
-      'alert-danger': status && !status.isCorrectAnswer
-    });
     const badgeClassName = classnames({
       badge: true,
-      success: status && status.isCorrectAnswer,
-      danger: status && !status.isCorrectAnswer
+      success: cssCodeAnswer && isCorrectAnswer,
+      danger: cssCodeAnswer && !isCorrectAnswer
     });
 
     let badgeElement = null;
-    if (status) {
+    if (cssCodeAnswer) {
       let randomIndex = Math.floor(Math.random() * Math.floor(BADGE_VALUE.correctAnswerMessages.length));
-      let message = status.isCorrectAnswer
+      let message = isCorrectAnswer
         ? BADGE_VALUE.correctAnswerMessages[randomIndex]
         : BADGE_VALUE.incorrectAnswerMessages[randomIndex];
       badgeElement = <Badge className={badgeClassName}>{message}</Badge>;
     }
 
     return (
-      <Pane className={paneClassName}>
+      <Pane
+        className="result-pane border border-3 border-primary"
+        isCorrectAnswer={isCorrectAnswer}
+        cssCodeAnswer={cssCodeAnswer}
+      >
         {badgeElement}
-        <TrustedHtml html={html} />
+        <TrustedHtml className="result-pane__html" html={html} />
       </Pane>
     );
   }

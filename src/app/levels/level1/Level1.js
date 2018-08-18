@@ -15,27 +15,33 @@ class Level1 extends Component {
     super(props);
     this.state = {
       currentExerciseIndex: 0,
-      cssCode: null
+      cssCodeAnswer: null,
+      isCorrectAnswer: false
     };
     this.isValidCss = false;
   }
 
   handleExerciseSelection = event => {
     this.setState({
-      currentExerciseIndex: event.target.value
+      currentExerciseIndex: Number(event.target.value),
+      // reset other values
+      cssCodeAnswer: null,
+      isCorrectAnswer: false
+      // TODO handle resetting code editor value
     });
   };
 
   setValidationResult = errors => {
-    console.log(errors);
     this.isValidCss = errors.length === 0;
   };
 
-  handleCssCodeChange = cssCode => {
+  handleCssCodeChange = cssCodeAnswer => {
     if (this.isValidCss) {
-      console.log('css change is valid:', cssCode);
+      console.log('css change is valid:', cssCodeAnswer);
+      let isCorrectAnswer = true; // TODO handle validating answer
       this.setState({
-        cssCode: cssCode
+        cssCodeAnswer: cssCodeAnswer,
+        isCorrectAnswer: isCorrectAnswer
       });
     }
   };
@@ -59,7 +65,11 @@ class Level1 extends Component {
         </div>
 
         <div className="col-6 col">
-          <ResultPane html={currentExercise.html} cssCode={this.state.cssCode} />
+          <ResultPane
+            html={currentExercise.html}
+            isCorrectAnswer={this.state.isCorrectAnswer}
+            cssCodeAnswer={this.state.cssCodeAnswer}
+          />
         </div>
       </div>
     );
