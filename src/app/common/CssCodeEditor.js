@@ -3,9 +3,6 @@ import CodeEditor from '../common/CodeEditor';
 import Spacing from '../common/Spacing';
 import PropTypes from 'prop-types';
 
-const TEXT_CSS = `/* style.css */
-`;
-
 class CssCodeEditor extends PureComponent {
   static propTypes = {
     onChange: PropTypes.func,
@@ -13,14 +10,15 @@ class CssCodeEditor extends PureComponent {
   };
 
   render() {
-    const { onChange, onValidate } = this.props;
+    const { onChange, onValidate, onFocus, value } = this.props;
     return (
       <Spacing>
         <CodeEditor
           mode="css"
           onValidate={onValidate}
           onChange={onChange}
-          defaultValue={TEXT_CSS}
+          onFocus={onFocus}
+          value={value}
           height="300px"
           highlightActiveLine
         />

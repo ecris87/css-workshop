@@ -11,23 +11,27 @@ const LevelTitle = styled.h3`
 `;
 
 class SelectorsLevel extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      currentExerciseIndex: 0,
-      cssCodeAnswer: null,
-      isCorrectAnswer: false
-    };
-    this.isValidCss = false;
-  }
+  static DEFAULT_CSS_TEXT = `/* style.css */
+`;
+  static INFO_CSS_TEXT = `/* style.css */
+/* Type in selector and declaration(s) here */`;
+
+  state = {
+    currentExerciseIndex: 0,
+    cssCodeAnswer: null,
+    isCorrectAnswer: false,
+    initialCssEditorValue: SelectorsLevel.INFO_CSS_TEXT
+  };
+
+  isValidCss = false;
 
   handleExerciseSelection = event => {
     this.setState({
       currentExerciseIndex: Number(event.target.value),
       // reset other values
       cssCodeAnswer: null,
-      isCorrectAnswer: false
-      // TODO handle resetting code editor value
+      isCorrectAnswer: false,
+      initialCssEditorValue: SelectorsLevel.INFO_CSS_TEXT
     });
   };
 
@@ -35,8 +39,18 @@ class SelectorsLevel extends Component {
     this.isValidCss = errors.length === 0;
   };
 
+  handleCssCodeEditorFocus = event => {
+    if (this.state.initialCssEditorValue !== SelectorsLevel.DEFAULT_CSS_TEXT) {
+      this.setState({ initialCssEditorValue: SelectorsLevel.DEFAULT_CSS_TEXT });
+    }
+  };
+
   handleCssCodeChange = cssCodeAnswer => {
-    if (this.isValidCss) {
+    if (
+      this.isValidCss &&
+      cssCodeAnswer !== SelectorsLevel.DEFAULT_CSS_TEXT &&
+      cssCodeAnswer !== SelectorsLevel.INFO_CSS_TEXT
+    ) {
       console.log('css change is valid:', cssCodeAnswer);
       let isCorrectAnswer = true; // TODO handle validating answer
       this.setState({
@@ -60,7 +74,12 @@ class SelectorsLevel extends Component {
             value={this.state.currentExerciseIndex}
             exercises={SELECTOR_EXERCISES}
           />
-          <CssCodeEditor onChange={this.handleCssCodeChange} onValidate={this.setValidationResult} />
+          <CssCodeEditor
+            value={this.state.initialCssEditorValue}
+            onFocus={this.handleCssCodeEditorFocus}
+            onChange={this.handleCssCodeChange}
+            onValidate={this.setValidationResult}
+          />
           <HtmlCodeEditor value={currentExercise.html} />
         </div>
 

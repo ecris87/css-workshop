@@ -6,7 +6,17 @@ import 'brace/theme/textmate';
 import 'brace/ext/language_tools';
 import PropTypes from 'prop-types';
 
-const CodeEditor = ({ mode, onChange, onValidate, defaultValue, value, height, readOnly, highlightActiveLine }) => {
+const CodeEditor = ({
+  mode,
+  onChange,
+  onValidate,
+  onFocus,
+  defaultValue,
+  value,
+  height,
+  readOnly,
+  highlightActiveLine
+}) => {
   return (
     <AceEditor
       // configurable props
@@ -18,6 +28,7 @@ const CodeEditor = ({ mode, onChange, onValidate, defaultValue, value, height, r
       height={height}
       highlightActiveLine={highlightActiveLine}
       onValidate={onValidate}
+      onFocus={onFocus}
       // default props
       theme="textmate"
       name="css-code-editor"
@@ -38,7 +49,8 @@ CodeEditor.propTypes = {
   defaultValue: PropTypes.string,
   height: PropTypes.string,
   onChange: PropTypes.func,
-  onValidate: PropTypes.func
+  onValidate: PropTypes.func,
+  onFocus: PropTypes.func
 };
 
 export default CodeEditor;
