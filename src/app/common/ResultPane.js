@@ -29,6 +29,10 @@ const Pane = styled.div`
   position: relative;
   border-color: ${calcBorderColor};
 
+  input {
+    min-width: 240px;
+  }
+
   /* add css code if supplied */
   .result-pane__html {
     ${props =>

@@ -9,7 +9,7 @@ const ExerciseSelection = ({ value, onChange, exercises }) => {
         {exercises.map((exercise, index) => {
           return (
             <option value={index} key={index}>
-              {exercise.text}
+              {exercise.description}
             </option>
           );
         })}
@@ -19,9 +19,13 @@ const ExerciseSelection = ({ value, onChange, exercises }) => {
 };
 
 ExerciseSelection.propTypes = {
-  onChange: PropTypes.func,
-  exercises: PropTypes.array,
-  value: PropTypes.number
+  onChange: PropTypes.func.isRequired,
+  exercises: PropTypes.arrayOf(
+    PropTypes.shape({
+      description: PropTypes.string.isRequired
+    })
+  ).isRequired,
+  value: PropTypes.number.isRequired
 };
 
 export default ExerciseSelection;

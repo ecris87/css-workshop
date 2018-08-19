@@ -6,32 +6,14 @@ import 'brace/theme/textmate';
 import 'brace/ext/language_tools';
 import PropTypes from 'prop-types';
 
-const CodeEditor = ({
-  mode,
-  onChange,
-  onValidate,
-  onFocus,
-  defaultValue,
-  value,
-  height,
-  readOnly,
-  highlightActiveLine
-}) => {
+const CodeEditor = props => {
   return (
     <AceEditor
       // configurable props
-      mode={mode}
-      onChange={onChange}
-      defaultValue={defaultValue}
-      readOnly={readOnly}
-      value={value}
-      height={height}
-      highlightActiveLine={highlightActiveLine}
-      onValidate={onValidate}
-      onFocus={onFocus}
+      {...props}
       // default props
       theme="textmate"
-      name="css-code-editor"
+      name="code-editor"
       fontSize={14}
       debounceChangePeriod={500}
       enableBasicAutocompletion
