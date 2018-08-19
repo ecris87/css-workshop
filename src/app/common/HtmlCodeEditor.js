@@ -3,7 +3,7 @@ import CodeEditor from '../common/CodeEditor';
 import Spacing from '../common/Spacing';
 import PropTypes from 'prop-types';
 
-const TEXT_HTML = `/* index.html */
+const TEXT_HTML = `<!-- index.html -->
 `;
 
 class HtmlCodeEditor extends PureComponent {
