@@ -11,8 +11,8 @@ const Badge = styled.span`
 `;
 
 const BADGE_VALUE = {
-  correctAnswerMessages: ['Excellent', 'Nice', 'Awesome possum', 'Splendid'],
-  incorrectAnswerMessages: ['Bummer', 'Nerts', 'Ouch', 'Not awesome']
+  correctAnswerMessages: ['Excellent', 'Awesome possum', 'Splendid'],
+  incorrectAnswerMessages: ['Bummer, try again...', 'Nerts, try again...', 'Nope, try again...']
 };
 
 const calcBorderColor = ({ cssCodeAnswer, isCorrectAnswer }) => {
