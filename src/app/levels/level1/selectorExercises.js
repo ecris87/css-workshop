@@ -49,11 +49,20 @@ const HTML_FOR_CLASS_AND_TYPE = `<article>
   </ul>
 </article>
 `;
-const HTML_FOR_COMMA_AND_UNI = `<h3>Meh cold-pressed four loko.</h3>
+const HTML_FOR_COMMA = `<h3>Meh cold-pressed four loko.</h3>
 <h4>Sriracha messenger bag chillwave.</h4>
-<h5>Photo booth adaptogen master cleanse.</h5>
 <div>Etsy portland knausgaard affogato.</div>
 <div class="fancy">Craft beer occupy polaroid.</div>
+`;
+const HTML_FOR_UNIVERSAL_COMBINED = `<article>
+  <section>
+    Section
+    <p>Sriracha messenger bag chillwave</p>
+    <div>Etsy portland knausgaard affogato.</div>
+    <span>Craft beer occupy polaroid</span>
+  </section>
+  <p>Meh cold-pressed four loko</p>
+</article>
 `;
 const HTML_FOR_SIBLING = `<article>
   <p>Paragraph 1</p>
@@ -67,21 +76,37 @@ const HTML_FOR_SIBLING = `<article>
 const HTML_FOR_CHILD = `<article>
   <section class="cool">
     Cool Section
-    <p>...Paragraph 1</p>
-    <p>...Paragraph 2</p>
-    <p>...Paragraph 3</p>
+    <p>... Paragraph 1</p>
+    <p>... Paragraph 2</p>
+    <p>... Paragraph 3</p>
     <section>
       Inner Section
-      <p>...Paragraph 4</p>
-      <p>...Paragraph 5</p>
+      <p>... Paragraph 4</p>
+      <p>... Paragraph 5</p>
     </section>
   </section>
   <section>
     Uncool section
-    <p>...Paragraph 6</p>
+    <p>... Paragraph 6</p>
   </section>
 </article>
 `;
+const HTML_FOR_NTH_CHILD = `<ol>
+  <li>List item</li>
+  <li>List item</li>
+  <li>List item</li>
+  <li>List item</li>
+  <li>List item</li>
+  <li>List item</li>
+</ol>`;
+const HTML_FOR_NTH_TYPE = `<section>
+  <p>Paragrah 1</p>
+  <section>Inner section</section>
+  <p>Paragraph 2</p>
+  <p>Paragraph 3</p>
+  <aside>Aside 1</aside>
+  <aside>Aside 2</aside>
+</section>`;
 
 const SELECTOR_EXERCISES = [
   {
@@ -158,17 +183,17 @@ const SELECTOR_EXERCISES = [
   },
   {
     selector: 'comma',
-    description: 'Comma Combinator: Change text color to red for all the headings, the "fancy" div',
-    html: HTML_FOR_COMMA_AND_UNI,
+    description: 'Comma Combinator: Change text color to red for all the headings and for the "fancy" div',
+    html: HTML_FOR_COMMA,
     correctAnswer: {
-      selector: 'h4, h5, .fancy',
+      selector: 'h3, h4, .fancy',
       declarations: ['color:red']
     }
   },
   {
     selector: 'universal',
-    description: 'Universal Selector: Make every text on the page underlined',
-    html: HTML_FOR_COMMA_AND_UNI,
+    description: 'Universal Selector: Make the text of every element on the page underlined',
+    html: HTML_FOR_COMMA,
     correctAnswer: {
       selector: '*',
       declarations: ['text-decoration:underline']
@@ -176,8 +201,8 @@ const SELECTOR_EXERCISES = [
   },
   {
     selector: 'universal_combined',
-    description: 'Universal Combined: Make every text inside the section underlined',
-    html: HTML_FOR_CLASS_AND_TYPE,
+    description: 'Universal Combined: Make the text of every element inside the section underlined',
+    html: HTML_FOR_UNIVERSAL_COMBINED,
     correctAnswer: {
       selector: 'section *',
       declarations: ['text-decoration:underline']
@@ -229,6 +254,15 @@ const SELECTOR_EXERCISES = [
     }
   },
   {
+    selector: 'nth_of_type_selector_alt',
+    description: 'Nth Child Selector: Underline every even list item',
+    html: HTML_FOR_NTH_CHILD,
+    correctAnswer: {
+      selector: 'li:nth-child(2n)',
+      declarations: ['text-decoration:underline']
+    }
+  },
+  {
     selector: 'last_child_selector',
     description: 'Last Child Selector: Underline the last child paragraph(s)',
     html: HTML_FOR_CHILD,
@@ -257,10 +291,10 @@ const SELECTOR_EXERCISES = [
   },
   {
     selector: 'nth_of_type_selector',
-    description: 'Nth of Type Selector: Underline every even element of type paragraph',
-    html: HTML_FOR_CHILD,
+    description: 'Nth of Type Selector: Underline the third element of type paragraph',
+    html: HTML_FOR_NTH_TYPE,
     correctAnswer: {
-      selector: 'p:nth-of-type(2n)',
+      selector: 'p:nth-of-type(3)',
       declarations: ['text-decoration:underline']
     }
   },

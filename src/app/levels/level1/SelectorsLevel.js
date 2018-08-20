@@ -15,7 +15,7 @@ class SelectorsLevel extends Component {
   static DEFAULT_CSS_TEXT = `/* style.css */
 `;
   static INFO_CSS_TEXT = `/* style.css */
-/* Type in selector and declaration(s) here */`;
+/* Type in selector and declarations here */`;
 
   state = {
     currentExerciseIndex: 0,
