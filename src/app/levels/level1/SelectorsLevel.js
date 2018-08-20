@@ -37,7 +37,7 @@ class SelectorsLevel extends Component {
   };
 
   setValidationResult = errors => {
-    this.isValidCss = errors.length === 0;
+    this.isValidCss = errors.length === 0 || (errors.length === 1 && errors[0].type === 'warning');
   };
 
   isCorrectAnswer(cssCode) {

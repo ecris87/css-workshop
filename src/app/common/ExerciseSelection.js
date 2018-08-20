@@ -9,7 +9,7 @@ const ExerciseSelection = ({ value, onChange, exercises }) => {
         {exercises.map((exercise, index) => {
           return (
             <option value={index} key={index}>
-              {exercise.description}
+              {`${index + 1}. ${exercise.description}`}
             </option>
           );
         })}
