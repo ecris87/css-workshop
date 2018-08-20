@@ -67,16 +67,18 @@ const HTML_FOR_SIBLING = `<article>
 const HTML_FOR_CHILD = `<article>
   <section class="cool">
     Cool Section
-    <p>Paragraph 1</p>
+    <p>...Paragraph 1</p>
+    <p>...Paragraph 2</p>
+    <p>...Paragraph 3</p>
     <section>
       Inner Section
-      <p>Paragraph 2</p>
-      <p>Paragraph 3</p>
+      <p>...Paragraph 4</p>
+      <p>...Paragraph 5</p>
     </section>
   </section>
   <section>
     Uncool section
-    <p>Paragraph 4</p>
+    <p>...Paragraph 6</p>
   </section>
 </article>
 `;
@@ -124,7 +126,7 @@ const SELECTOR_EXERCISES = [
     html: HTML_FOR_ATTRIBUTE,
     correctAnswer: {
       selector: 'input[type="text"]',
-      declarations: ['background:red', 'background-color:red']
+      declarations: ['background:red']
     }
   },
   {
@@ -206,6 +208,96 @@ const SELECTOR_EXERCISES = [
     correctAnswer: {
       selector: '.cool > p',
       declarations: ['text-decoration:underline']
+    }
+  },
+  {
+    selector: 'first_child_selector',
+    description: 'First Child Selector: Underline the first child paragraph(s) of the "cool" section',
+    html: HTML_FOR_CHILD,
+    correctAnswer: {
+      selector: '.cool p:first-child',
+      declarations: ['text-decoration:underline']
+    }
+  },
+  {
+    selector: 'nth_child_selector',
+    description: 'Nth Child Selector: Underline the second direct child paragraph of the "cool" section',
+    html: HTML_FOR_CHILD,
+    correctAnswer: {
+      selector: '.cool > p:nth-child(2)',
+      declarations: ['text-decoration:underline']
+    }
+  },
+  {
+    selector: 'last_child_selector',
+    description: 'Last Child Selector: Underline the last child paragraph(s)',
+    html: HTML_FOR_CHILD,
+    correctAnswer: {
+      selector: 'p:last-child',
+      declarations: ['text-decoration:underline']
+    }
+  },
+  {
+    selector: 'last_of_type_selector',
+    description: 'Last of Type Selector: Underline the last element(s) of type paragraph',
+    html: HTML_FOR_CHILD,
+    correctAnswer: {
+      selector: 'p:last-of-type',
+      declarations: ['text-decoration:underline']
+    }
+  },
+  {
+    selector: 'first_of_type_selector',
+    description: 'First of Type Selector: Underline the first element(s) of type paragraph',
+    html: HTML_FOR_CHILD,
+    correctAnswer: {
+      selector: 'p:first-of-type',
+      declarations: ['text-decoration:underline']
+    }
+  },
+  {
+    selector: 'nth_of_type_selector',
+    description: 'Nth of Type Selector: Underline every even element of type paragraph',
+    html: HTML_FOR_CHILD,
+    correctAnswer: {
+      selector: 'p:nth-of-type(2n)',
+      declarations: ['text-decoration:underline']
+    }
+  },
+  {
+    selector: 'hover_selector',
+    description: 'Hover Selector: Make the text of each input "2em" on hover',
+    html: HTML_FOR_ATTRIBUTE,
+    correctAnswer: {
+      selector: 'input:hover',
+      declarations: ['font-size:2em']
+    }
+  },
+  {
+    selector: 'focus_selector',
+    description: 'Focus Selector: Make the background of each input blue on focus',
+    html: HTML_FOR_ATTRIBUTE,
+    correctAnswer: {
+      selector: 'input:focus',
+      declarations: ['background:blue']
+    }
+  },
+  {
+    selector: 'not_selector',
+    description: 'Not Selector: Give a blue background to the p that doesn\'t have the "fancy" class',
+    html: HTML_FOR_CLASS,
+    correctAnswer: {
+      selector: 'p:not(.fancy)',
+      declarations: ['background:blue']
+    }
+  },
+  {
+    selector: 'after_selector',
+    description: 'After Pseudo Element Selector: Add a red smiley face ":)" after each paragraph',
+    html: HTML_FOR_CLASS,
+    correctAnswer: {
+      selector: 'p::after',
+      declarations: ['content:":)"', 'color:red']
     }
   }
 ];
