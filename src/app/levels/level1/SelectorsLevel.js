@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import CssCodeEditor from '../../common/CssCodeEditor';
-import HtmlCodeEditor from '../../common/HtmlCodeEditor';
-import ResultPane from '../../common/ResultPane';
+import CssCodeEditor from 'app/common/codeEditor/CssCodeEditor';
+import HtmlCodeEditor from 'app/common/codeEditor/HtmlCodeEditor';
+import ExerciseSelection from 'app/common/exercises/ExerciseSelection';
+import exerciseValidation from 'app/common/exercises/exerciseValidation';
+import ResultPane from 'app/common/ResultPane';
 import styled from 'styled-components';
-import ExerciseSelection from '../../common/ExerciseSelection';
-import exerciseValidation from '../../common/exerciseValidation';
 import SELECTOR_EXERCISES from './selectorExercises';
 
 const LevelTitle = styled.h3`

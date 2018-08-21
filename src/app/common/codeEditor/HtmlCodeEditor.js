@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
-import CodeEditor from '../common/CodeEditor';
-import Spacing from '../common/Spacing';
+import CodeEditor from './CodeEditor';
+import Spacing from 'app/common/Spacing';
 import PropTypes from 'prop-types';
 
 const TEXT_HTML = `<!-- index.html -->
