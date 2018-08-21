@@ -1,20 +1,24 @@
-const HTML_FOR_TYPE = `<article>
-  <p>Meh cold-pressed four loko.</p>
-  <p>Sriracha messenger bag chillwave.</p>
-  <p>Live-edge raclette kombucha.</p>
-  <span>Craft beer occupy polaroid.</span>
-</article>`;
+const HTML = `<div class="ben" style="width: 300px; background: papayawhip;">
+  Hi! I'm supposed to be 300px.
+</div>
+<div class="jerry" style="width: 300px; background: thistle;">
+  I should also be 300px.
+</div>`;
 
-const BOX_MODEL_EXERCISES = [
-  {
-    selector: 'type',
-    description: 'Type Selector: Make all paragraphs have red text',
-    html: HTML_FOR_TYPE,
-    correctAnswer: {
-      selector: 'p',
-      declarations: ['color:red']
+const BOX_MODEL_EXERCISE = {
+  description: `For the first div - "ben", apply 30px padding and a margin of 20px. 
+  For the second div - "jerry", add a 20px margin and a 1px black border. Ensure both remain 300px wide.`,
+  html: HTML,
+  correctAnswer: [
+    {
+      selector: '.ben',
+      rules: [{ prop: 'padding', value: '30px' }, { prop: 'margin', value: '20px' }]
+    },
+    {
+      selector: '.jerry',
+      rules: [{ prop: 'border', value: '1px solid black' }, { prop: 'margin', value: '20px' }]
     }
-  }
-];
+  ]
+};
 
-export default BOX_MODEL_EXERCISES;
+export default BOX_MODEL_EXERCISE;

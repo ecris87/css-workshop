@@ -28,6 +28,8 @@ const Pane = styled.div`
   padding: 1em;
   position: relative;
   border-color: ${calcBorderColor};
+  /* override paper.css default so that the box model exercise can work */
+  box-sizing: content-box;
 
   input {
     min-width: 240px;
