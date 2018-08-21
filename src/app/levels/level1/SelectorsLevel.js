@@ -4,12 +4,8 @@ import HtmlCodeEditor from 'app/common/codeEditor/HtmlCodeEditor';
 import ExerciseSelection from 'app/common/exercises/ExerciseSelection';
 import exerciseValidation from 'app/common/exercises/exerciseValidation';
 import ResultPane from 'app/common/ResultPane';
-import styled from 'styled-components';
+import { LevelTitle } from 'app/common/ComponentsLibrary';
 import SELECTOR_EXERCISES from './selectorExercises';
-
-const LevelTitle = styled.h3`
-  margin: 0;
-`;
 
 class SelectorsLevel extends Component {
   static DEFAULT_CSS_TEXT = `/* style.css */

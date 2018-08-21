@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import CodeEditor from './CodeEditor';
-import Spacing from 'app/common/Spacing';
+import { Spacing } from 'app/common/ComponentsLibrary';
 import PropTypes from 'prop-types';
 
 class CssCodeEditor extends PureComponent {

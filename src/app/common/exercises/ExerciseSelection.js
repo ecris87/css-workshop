@@ -1,5 +1,5 @@
 import React from 'react';
-import Spacing from 'app/common/Spacing';
+import { Spacing } from 'app/common/ComponentsLibrary';
 import PropTypes from 'prop-types';
 
 const ExerciseSelection = ({ value, onChange, exercises }) => {
