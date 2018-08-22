@@ -2,9 +2,17 @@ import React, { Component } from 'react';
 import CssCodeEditor from 'app/common/codeEditor/CssCodeEditor';
 import HtmlCodeEditor from 'app/common/codeEditor/HtmlCodeEditor';
 import ExerciseSelection from 'app/common/exercises/ExerciseSelection';
+import exerciseValidation from 'app/common/exercises/exerciseValidation';
 import ResultPane from 'app/common/ResultPane';
 import { LevelTitle, LevelDescription, LevelContent } from 'app/common/ComponentsLibrary';
 import POSITIONING_EXERCISES from './positioningExercises';
+import { injectGlobal } from 'styled-components';
+
+injectGlobal`
+  body {
+    height: 1500px; /* in order to demo position: fixed */
+  }
+`;
 
 class PositioningLevel extends Component {
   static DEFAULT_CSS_TEXT = `/* style.css */
@@ -35,15 +43,10 @@ class PositioningLevel extends Component {
     this.isValidCss = errors.length === 0 || (errors.length === 1 && errors[0].type === 'warning');
   };
 
-  isCorrectAnswer() {
-    /**
-     * .jerry {
-    position: relative;
-    left: 20px;
-    top: -10px;
-    }
-     */
-    return true;
+  isCorrectAnswer(cssCode) {
+    let correctAnswer = POSITIONING_EXERCISES[this.state.currentExerciseIndex].correctAnswer;
+    cssCode = cssCode.replace(PositioningLevel.DEFAULT_CSS_TEXT, '');
+    return exerciseValidation.isCorrect(cssCode, correctAnswer);
   }
 
   handleCssCodeEditorFocus = event => {

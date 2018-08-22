@@ -44,13 +44,28 @@ const Pane = styled.div`
       `};
 
     /* for box-model and positioning exercises */
-    .ben {
-      width: 300px;
+    .ben,
+    .plate {
       background: papayawhip;
     }
-    .jerry {
-      width: 300px;
+    .jerry,
+    .pie {
       background: thistle;
+    }
+    .ben,
+    .jerry,
+    .plate {
+      width: 300px;
+    }
+    .plate,
+    .pie {
+      padding: 30px;
+    }
+    .pie {
+      width: 200px;
+    }
+    .plate {
+      height: 170px;
     }
   }
 `;

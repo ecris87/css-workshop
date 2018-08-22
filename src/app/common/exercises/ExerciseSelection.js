@@ -1,11 +1,16 @@
 import React from 'react';
 import { Spacing } from 'app/common/ComponentsLibrary';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
+
+const Select = styled.select`
+  font-size: 0.8rem;
+`;
 
 const ExerciseSelection = ({ value, onChange, exercises }) => {
   return (
     <Spacing>
-      <select value={value} onChange={onChange}>
+      <Select value={value} onChange={onChange}>
         {exercises.map((exercise, index) => {
           return (
             <option value={index} key={index}>
@@ -13,7 +18,7 @@ const ExerciseSelection = ({ value, onChange, exercises }) => {
             </option>
           );
         })}
-      </select>
+      </Select>
     </Spacing>
   );
 };
