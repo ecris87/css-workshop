@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import { LevelFooter } from 'app/common/ComponentsLibrary';
 import logo from '../../images/ninja.svg';
 import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
@@ -12,18 +13,7 @@ const Footer = styled.footer`
       position: absolute;
       bottom: 15px;
       right: 15px;
-    `} 
-
-    /* other than homepage */
-    ${props =>
-      !props.isHomepage &&
-      css`
-        display: flex;
-        justify-content: center;
-        padding: 15px 0;
-      `} 
-
-  span {
+    `} span {
     padding-right: 10px;
   }
 
@@ -42,10 +32,12 @@ const AppFooter = ({ location }) => {
   return (
     <Footer isHomepage={isHomepage}>
       {!isHomepage ? (
-        <Link to="/">
-          <span>Go back to homepage</span>
-          <img className="app__logo app__logo--alt" src={logo} alt="logo" />
-        </Link>
+        <LevelFooter>
+          <Link to="/">
+            <span>Go back to homepage</span>
+            <img className="app__logo app__logo--alt" src={logo} alt="logo" />
+          </Link>
+        </LevelFooter>
       ) : (
         <img className="app__logo" src={logo} alt="logo" />
       )}

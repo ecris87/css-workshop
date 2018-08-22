@@ -17,3 +17,7 @@ img {
 a {
   background: none;
 }
+
+.row {
+  margin-bottom: 0;
+}

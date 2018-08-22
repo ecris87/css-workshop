@@ -4,7 +4,7 @@ import HtmlCodeEditor from 'app/common/codeEditor/HtmlCodeEditor';
 import ExerciseSelection from 'app/common/exercises/ExerciseSelection';
 import exerciseValidation from 'app/common/exercises/exerciseValidation';
 import ResultPane from 'app/common/ResultPane';
-import { LevelTitle } from 'app/common/ComponentsLibrary';
+import { LevelTitle, LevelContent } from 'app/common/ComponentsLibrary';
 import SELECTOR_EXERCISES from './selectorExercises';
 
 class SelectorsLevel extends Component {
@@ -66,11 +66,11 @@ class SelectorsLevel extends Component {
     let currentExercise = SELECTOR_EXERCISES[this.state.currentExerciseIndex];
     return (
       <div className="row">
-        <div className="col-12 col">
-          <LevelTitle>Level 1: Selectors, Properties and Values</LevelTitle>
-        </div>
+        <LevelTitle className="col-12 col">
+          <h3>Level 1: Selectors, Properties and Values</h3>
+        </LevelTitle>
 
-        <div className="col-6 col">
+        <LevelContent className="col-6 col">
           <ExerciseSelection
             onChange={this.handleExerciseSelection}
             value={this.state.currentExerciseIndex}
@@ -83,15 +83,15 @@ class SelectorsLevel extends Component {
             onValidate={this.setValidationResult}
           />
           <HtmlCodeEditor value={currentExercise.html} />
-        </div>
+        </LevelContent>
 
-        <div className="col-6 col">
+        <LevelContent className="col-6 col">
           <ResultPane
             html={currentExercise.html}
             isCorrectAnswer={this.state.isCorrectAnswer}
             cssCodeAnswer={this.state.cssCodeAnswer}
           />
-        </div>
+        </LevelContent>
       </div>
     );
   }

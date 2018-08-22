@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import CodeEditor from './CodeEditor';
-import { Spacing } from 'app/common/ComponentsLibrary';
+import { EditorWrapper } from 'app/common/ComponentsLibrary';
 import PropTypes from 'prop-types';
 
 class CssCodeEditor extends PureComponent {
@@ -12,17 +12,17 @@ class CssCodeEditor extends PureComponent {
   render() {
     const { onChange, onValidate, onFocus, value } = this.props;
     return (
-      <Spacing>
+      <EditorWrapper>
         <CodeEditor
           mode="css"
           onValidate={onValidate}
           onChange={onChange}
           onFocus={onFocus}
           value={value}
-          height="300px"
+          height="100%"
           highlightActiveLine
         />
-      </Spacing>
+      </EditorWrapper>
     );
   }
 }

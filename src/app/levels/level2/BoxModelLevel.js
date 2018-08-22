@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import CssCodeEditor from 'app/common/codeEditor/CssCodeEditor';
 import HtmlCodeEditor from 'app/common/codeEditor/HtmlCodeEditor';
 import ResultPane from 'app/common/ResultPane';
-import { LevelTitle, LevelDescription } from 'app/common/ComponentsLibrary';
+import { LevelTitle, LevelDescription, LevelContent } from 'app/common/ComponentsLibrary';
 import BOX_MODEL_EXERCISE from './boxModelExercises';
 
 class BoxModelLevel extends Component {
@@ -61,11 +61,11 @@ class BoxModelLevel extends Component {
   render() {
     return (
       <div className="row">
-        <div className="col-12 col">
-          <LevelTitle>Level 2: Box Model</LevelTitle>
-        </div>
+        <LevelTitle className="col-12 col">
+          <h3>Level 2: Box Model</h3>
+        </LevelTitle>
 
-        <div className="col-6 col">
+        <LevelContent className="col-6 col">
           <LevelDescription>{BOX_MODEL_EXERCISE.description}</LevelDescription>
           <CssCodeEditor
             value={this.state.initialCssEditorValue}
@@ -74,15 +74,15 @@ class BoxModelLevel extends Component {
             onValidate={this.setValidationResult}
           />
           <HtmlCodeEditor value={BOX_MODEL_EXERCISE.html} />
-        </div>
+        </LevelContent>
 
-        <div className="col-6 col">
+        <LevelContent className="col-6 col">
           <ResultPane
             html={BOX_MODEL_EXERCISE.html}
             isCorrectAnswer={this.state.isCorrectAnswer}
             cssCodeAnswer={this.state.cssCodeAnswer}
           />
-        </div>
+        </LevelContent>
       </div>
     );
   }

@@ -28,15 +28,15 @@ const Pane = styled.div`
   padding: 1em;
   position: relative;
   border-color: ${calcBorderColor};
-  /* override paper.css default so that the box model exercise can work */
-  box-sizing: content-box;
 
   input {
     min-width: 240px;
   }
 
-  /* add css code if supplied */
   .result-pane__html {
+    /* override paper.css default so that the box model exercise can work */
+    box-sizing: content-box;
+    /* add css code if supplied */
     ${props =>
       props.cssCodeAnswer &&
       css`
