@@ -62,7 +62,7 @@ class BoxModelLevel extends Component {
     return (
       <div className="row">
         <div className="col-12 col">
-          <LevelTitle>Level 1: Selectors, Properties and Values</LevelTitle>
+          <LevelTitle>Level 2: Box Model</LevelTitle>
         </div>
 
         <div className="col-6 col">
