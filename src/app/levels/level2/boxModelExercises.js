@@ -1,7 +1,7 @@
-const HTML = `<div class="ben" style="width: 300px; background: papayawhip;">
+const HTML = `<div class="ben">
   Hi! I'm supposed to be 300px.
 </div>
-<div class="jerry" style="width: 300px; background: thistle;">
+<div class="jerry">
   I should also be 300px.
 </div>`;
 

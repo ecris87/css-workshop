@@ -42,6 +42,16 @@ const Pane = styled.div`
       css`
         ${props.cssCodeAnswer};
       `};
+
+    /* for box-model and positioning exercises */
+    .ben {
+      width: 300px;
+      background: papayawhip;
+    }
+    .jerry {
+      width: 300px;
+      background: thistle;
+    }
   }
 `;
 
