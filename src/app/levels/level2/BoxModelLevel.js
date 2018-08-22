@@ -23,19 +23,21 @@ class BoxModelLevel extends Component {
     this.isValidCss = errors.length === 0 || (errors.length === 1 && errors[0].type === 'warning');
   };
 
-  checkAnswer(callback) {
+  checkAnswer() {
     /**
 .ben { padding: 30px; margin: 20px; }
-.jerry {margin: 20px; border: 1px solid black; }
+.jerry { margin: 20px; border: 5px solid black; }
      */
-    setTimeout(() => {
-      let ben = document.querySelector('.ben');
-      let jerry = document.querySelector('.jerry');
-      let paddingForBen = window.getComputedStyle(ben, null).getPropertyValue('padding');
-      let isCorrectAnswer =
-        paddingForBen === '30px' && jerry.offsetWidth === 300 && ben.offsetWidth === jerry.offsetWidth;
-      callback(isCorrectAnswer);
-    }, 0);
+    let ben = document.querySelector('.ben');
+    let jerry = document.querySelector('.jerry');
+    let paddingForBen = window.getComputedStyle(ben, null).getPropertyValue('padding');
+    let borderForJerry = window.getComputedStyle(jerry, null).getPropertyValue('border-width');
+    let isCorrectAnswer =
+      paddingForBen === BOX_MODEL_EXERCISE.correctAnswer.expectedPadding &&
+      borderForJerry === BOX_MODEL_EXERCISE.correctAnswer.expectedBorder &&
+      jerry.offsetWidth === BOX_MODEL_EXERCISE.correctAnswer.expectedWidth &&
+      ben.offsetWidth === jerry.offsetWidth;
+    return Promise.resolve(isCorrectAnswer);
   }
 
   handleCssCodeEditorFocus = event => {
@@ -50,11 +52,16 @@ class BoxModelLevel extends Component {
       cssCodeAnswer !== BoxModelLevel.DEFAULT_CSS_TEXT &&
       cssCodeAnswer !== BoxModelLevel.INFO_CSS_TEXT
     ) {
-      this.setState({ cssCodeAnswer: cssCodeAnswer });
-      const callback = isCorrectAnswer => {
-        this.setState({ isCorrectAnswer: isCorrectAnswer });
-      };
-      this.checkAnswer(callback);
+      this.setState(
+        {
+          cssCodeAnswer: cssCodeAnswer
+        },
+        () => {
+          this.checkAnswer().then(isCorrectAnswer => {
+            this.setState({ isCorrectAnswer: isCorrectAnswer });
+          });
+        }
+      );
     }
   };
 
