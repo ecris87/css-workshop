@@ -1,13 +1,27 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import logo from '../../images/ninja.svg';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
 
 const Footer = styled.footer`
-  position: absolute;
-  bottom: 15px;
-  right: 15px;
+  /* homepage */
+  ${props =>
+    props.isHomepage &&
+    css`
+      position: absolute;
+      bottom: 15px;
+      right: 15px;
+    `} 
+
+    /* other than homepage */
+    ${props =>
+      !props.isHomepage &&
+      css`
+        display: flex;
+        justify-content: center;
+        padding: 15px 0;
+      `} 
 
   span {
     padding-right: 10px;
@@ -24,9 +38,10 @@ const Footer = styled.footer`
 `;
 
 const AppFooter = ({ location }) => {
+  let isHomepage = location && location.pathname === '/';
   return (
-    <Footer>
-      {location && location.pathname !== '/' ? (
+    <Footer isHomepage={isHomepage}>
+      {!isHomepage ? (
         <Link to="/">
           <span>Go back to homepage</span>
           <img className="app__logo app__logo--alt" src={logo} alt="logo" />
