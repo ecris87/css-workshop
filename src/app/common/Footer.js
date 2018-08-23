@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { LevelFooter } from 'app/common/ComponentsLibrary';
-import logo from '../../images/ninja.svg';
+import logo from 'images/ninja.svg';
 import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
 

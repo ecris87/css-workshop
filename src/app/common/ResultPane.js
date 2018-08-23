@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 import classnames from 'classnames';
 import TrustedHtml from '../common/TrustedHtml';
 import PropTypes from 'prop-types';
+import ninjaImage from 'images/ninja.svg';
 
 const Badge = styled.span`
   position: absolute;
@@ -66,6 +67,35 @@ const Pane = styled.div`
     }
     .plate {
       height: 170px;
+    }
+
+    .sticky-container {
+      height: 500px;
+      overflow: auto;
+
+      nav {
+        background: black;
+      }
+
+      nav a,
+      nav span {
+        color: white;
+        padding: 0 10px;
+      }
+    }
+
+    .ninja-image {
+      background-image: url(${ninjaImage});
+      background-color: papayawhip;
+      height: 190px;
+      width: 320px;
+    }
+    .ninja-text {
+      background: black;
+      color: white;
+      font-size: 20px;
+      padding: 10px;
+      display: inline-block;
     }
   }
 `;
