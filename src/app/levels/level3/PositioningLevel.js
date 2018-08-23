@@ -61,9 +61,9 @@ class PositioningLevel extends Component {
     const currentExercise = POSITIONING_EXERCISES[this.state.currentExerciseIndex];
     let isCorrect;
     if (currentExercise.id === 'z-index') {
-      let ninja = document.querySelector(currentExercise.correctAnswer.selector);
-      let ninjaZIndex = window.getComputedStyle(ninja, null).getPropertyValue('z-index');
-      isCorrect = ninjaZIndex >= 1;
+      let element = document.querySelector(currentExercise.correctAnswer.selector);
+      let elementZIndex = window.getComputedStyle(element, null).getPropertyValue('z-index');
+      isCorrect = elementZIndex >= 1;
     } else {
       let correctAnswer = POSITIONING_EXERCISES[this.state.currentExerciseIndex].correctAnswer;
       cssCode = cssCode.replace(PositioningLevel.DEFAULT_CSS_TEXT, '');
