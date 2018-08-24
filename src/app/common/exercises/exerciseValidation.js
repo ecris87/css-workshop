@@ -16,14 +16,16 @@ const isSelectorMatch = (selector, rule) => {
 };
 
 const isDeclarationsMatch = (cssCode, rule) => {
-  const CSS_DECLARATION_REGEX = /\{([\s\S][^}]*)/gim;
+  const CSS_DECLARATION_REGEX = /(\{[\s\S][^}]*})/gim;
+  const CURLY_BRACES = /[{}]/g;
   const WHITESPACE_REGEX = /\s+/gim;
-  let matchedCode = CSS_DECLARATION_REGEX.exec(cssCode);
-  if (!matchedCode || !matchedCode[1]) {
-    console.error('Could not interpret declartions ', matchedCode);
+  let matched = CSS_DECLARATION_REGEX.exec(cssCode);
+  if (!matched || !matched[0]) {
+    console.error('Could not interpret declartions ', matched);
     return;
   }
-  let declarations = matchedCode[1].split(';'); // we want the second match because it doesn't include the curly brace
+  let matchedCode = matched[0].replace(CURLY_BRACES, ''); // remove curly braces
+  let declarations = matchedCode.split(';');
   let providedDeclarations = declarations
     .map(value => value.replace(WHITESPACE_REGEX, ''))
     .filter(cleanValue => cleanValue !== '');

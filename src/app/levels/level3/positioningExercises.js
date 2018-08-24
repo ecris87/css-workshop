@@ -56,11 +56,22 @@ const POSITIONING_EXERCISES = [
     }
   },
   {
+    id: 'sticky-position',
+    description: 'Sticky Position: make sure NAVBAR sticks to the top as you scroll down',
+    descriptionDetails: `A "sticky" element toggles between "relative" and "fixed", depending on the user's scroll 
+    position. It is positioned relative until a given offset position is met in the viewport - then it sticks in 
+    place (like position: fixed).`,
+    html: HTML_STICKY,
+    correctAnswer: {
+      selector: 'nav',
+      declarations: ['position:sticky', 'top:0']
+    }
+  },
+  {
     id: 'absolute-position',
     description: 'Absolute Position: horizontally and vertically center "pie" inside of "plate"',
     descriptionDetails: `"absolute" is the trickiest position value. It behaves like "fixed" except relative to the 
-    nearest positioned ancestor instead of relative to the viewport. If an absolutely-positioned element has no positioned 
-    ancestors, it uses the document body, and still moves along with page scrolling.`,
+    nearest positioned ancestor instead of relative to the viewport. If an absolutely-positioned element has no positioned ancestors, it uses the document body, and still moves along with page scrolling.`,
     html: HTML_ABSOLUTE,
     correctAnswer: [
       {
@@ -72,18 +83,6 @@ const POSITIONING_EXERCISES = [
         declarations: ['position:absolute', 'top:50%', 'left:50%', 'transform:translate(-50%, -50%)']
       }
     ]
-  },
-  {
-    id: 'sticky-position',
-    description: 'Sticky Position: make sure NAVBAR sticks to the top as you scroll down',
-    descriptionDetails: `A "sticky" element toggles between "relative" and "fixed", depending on the user's scroll 
-    position. It is positioned relative until a given offset position is met in the viewport - then it sticks in 
-    place (like position: fixed).`,
-    html: HTML_STICKY,
-    correctAnswer: {
-      selector: 'nav',
-      declarations: ['position:sticky', 'top:0']
-    }
   },
   {
     id: 'z-index',
