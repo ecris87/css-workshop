@@ -21,3 +21,8 @@ a {
 .row {
   margin-bottom: 0;
 }
+
+/* hide ace editor warnings */
+.ace_gutter-cell.ace_warning {
+  display: none;
+}
