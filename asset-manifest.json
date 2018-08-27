@@ -2,11 +2,11 @@
   "runtime~main.js": "/css-workshop/static/js/runtime~main.3254d44d.js",
   "runtime~main.js.map": "/css-workshop/static/js/runtime~main.3254d44d.js.map",
   "vendors.css": "/css-workshop/static/css/vendors.999bab5e.chunk.css",
-  "vendors.js": "/css-workshop/static/js/vendors.71e29b83.chunk.js",
-  "vendors.js.map": "/css-workshop/static/js/vendors.71e29b83.chunk.js.map",
-  "main.css": "/css-workshop/static/css/main.31c38ea8.chunk.css",
-  "main.js": "/css-workshop/static/js/main.336e697f.chunk.js",
-  "main.js.map": "/css-workshop/static/js/main.336e697f.chunk.js.map",
+  "vendors.js": "/css-workshop/static/js/vendors.4d3b7581.chunk.js",
+  "vendors.js.map": "/css-workshop/static/js/vendors.4d3b7581.chunk.js.map",
+  "main.css": "/css-workshop/static/css/main.57614a87.chunk.css",
+  "main.js": "/css-workshop/static/js/main.875766fa.chunk.js",
+  "main.js.map": "/css-workshop/static/js/main.875766fa.chunk.js.map",
   "static/media/ninja.svg": "/css-workshop/static/media/ninja.9e5e0f77.svg",
   "index.html": "/css-workshop/index.html"
 }
