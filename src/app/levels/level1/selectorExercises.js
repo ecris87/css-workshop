@@ -110,7 +110,7 @@ const HTML_FOR_NTH_TYPE = `<section>
 
 const SELECTOR_EXERCISES = [
   {
-    selector: 'type',
+    id: 'type',
     description: 'Type Selector: Make all paragraphs have red text',
     html: HTML_FOR_TYPE,
     correctAnswer: {
@@ -119,7 +119,7 @@ const SELECTOR_EXERCISES = [
     }
   },
   {
-    selector: 'id',
+    id: 'id',
     description: 'ID Selector: Make the "fancy" paragraphs have blue, center-aligned text',
     html: HTML_FOR_ID,
     correctAnswer: {
@@ -128,7 +128,7 @@ const SELECTOR_EXERCISES = [
     }
   },
   {
-    selector: 'class',
+    id: 'class',
     description: 'Class Selector: Convert the letters from the "fancy" paragraphs to uppercase',
     html: HTML_FOR_CLASS,
     correctAnswer: {
@@ -137,7 +137,7 @@ const SELECTOR_EXERCISES = [
     }
   },
   {
-    selector: 'attribute',
+    id: 'attribute',
     description: 'Attribute Selector: Make all disabled inputs have italic text',
     html: HTML_FOR_ATTRIBUTE,
     correctAnswer: {
@@ -146,7 +146,7 @@ const SELECTOR_EXERCISES = [
     }
   },
   {
-    selector: 'attribute_value',
+    id: 'attribute_value',
     description: 'Attribute Value Selector: Make all text inputs have a red background',
     html: HTML_FOR_ATTRIBUTE,
     correctAnswer: {
@@ -155,7 +155,7 @@ const SELECTOR_EXERCISES = [
     }
   },
   {
-    selector: 'descendant',
+    id: 'descendant',
     description: 'Descendant Selector: Make all paragraphs inside the section have red text',
     html: HTML_FOR_DESCENDANT,
     correctAnswer: {
@@ -164,7 +164,7 @@ const SELECTOR_EXERCISES = [
     }
   },
   {
-    selector: 'descendant_and_id',
+    id: 'descendant_and_id',
     description: 'Combined ID & Descendant: Make all paragraphs inside the "cool" section have 30px text',
     html: HTML_FOR_DESCENDANT_AND_ID,
     correctAnswer: {
@@ -173,7 +173,7 @@ const SELECTOR_EXERCISES = [
     }
   },
   {
-    selector: 'class_and_type',
+    id: 'class_and_type',
     description: 'Combined Class & Type: Add padding of 30px to the "fancy" list',
     html: HTML_FOR_CLASS_AND_TYPE,
     correctAnswer: {
@@ -182,7 +182,7 @@ const SELECTOR_EXERCISES = [
     }
   },
   {
-    selector: 'comma',
+    id: 'comma',
     description: 'Comma Combinator: Change text color to red for all the headings and for the "fancy" div',
     html: HTML_FOR_COMMA,
     correctAnswer: {
@@ -191,7 +191,7 @@ const SELECTOR_EXERCISES = [
     }
   },
   {
-    selector: 'universal',
+    id: 'universal',
     description: 'Universal Selector: Make the text of every element on the page underlined',
     html: HTML_FOR_COMMA,
     correctAnswer: {
@@ -200,7 +200,7 @@ const SELECTOR_EXERCISES = [
     }
   },
   {
-    selector: 'universal_combined',
+    id: 'universal_combined',
     description: 'Universal Combined: Make the text of every element inside the section underlined',
     html: HTML_FOR_UNIVERSAL_COMBINED,
     correctAnswer: {
@@ -209,7 +209,7 @@ const SELECTOR_EXERCISES = [
     }
   },
   {
-    selector: 'sibling_adjacent',
+    id: 'sibling_adjacent',
     description: 'Adjacent Sibling Selector: Underline paragraphs that directly follow a section',
     html: HTML_FOR_SIBLING,
     correctAnswer: {
@@ -218,7 +218,7 @@ const SELECTOR_EXERCISES = [
     }
   },
   {
-    selector: 'sibling_general',
+    id: 'sibling_general',
     description: 'General Sibling Selector: Underline every paragraph that follows a section',
     html: HTML_FOR_SIBLING,
     correctAnswer: {
@@ -227,7 +227,7 @@ const SELECTOR_EXERCISES = [
     }
   },
   {
-    selector: 'child_selector',
+    id: 'child_selector',
     description: 'Child Selector: Underline every paragraph that is a direct child of "cool" section',
     html: HTML_FOR_CHILD,
     correctAnswer: {
@@ -236,7 +236,7 @@ const SELECTOR_EXERCISES = [
     }
   },
   {
-    selector: 'first_child_selector',
+    id: 'first_child_selector',
     description: 'First Child Selector: Underline the first child paragraph(s) of the "cool" section',
     html: HTML_FOR_CHILD,
     correctAnswer: {
@@ -245,7 +245,7 @@ const SELECTOR_EXERCISES = [
     }
   },
   {
-    selector: 'nth_child_selector',
+    id: 'nth_child_selector',
     description: 'Nth Child Selector: Underline the second direct child paragraph of the "cool" section',
     html: HTML_FOR_CHILD,
     correctAnswer: {
@@ -254,7 +254,7 @@ const SELECTOR_EXERCISES = [
     }
   },
   {
-    selector: 'nth_of_type_selector_alt',
+    id: 'nth_of_type_selector_alt',
     description: 'Nth Child Selector: Underline every even list item',
     html: HTML_FOR_NTH_CHILD,
     correctAnswer: {
@@ -263,7 +263,7 @@ const SELECTOR_EXERCISES = [
     }
   },
   {
-    selector: 'last_child_selector',
+    id: 'last_child_selector',
     description: 'Last Child Selector: Underline the last child paragraph(s)',
     html: HTML_FOR_CHILD,
     correctAnswer: {
@@ -272,7 +272,7 @@ const SELECTOR_EXERCISES = [
     }
   },
   {
-    selector: 'last_of_type_selector',
+    id: 'last_of_type_selector',
     description: 'Last of Type Selector: Underline the last element(s) of type paragraph',
     html: HTML_FOR_CHILD,
     correctAnswer: {
@@ -281,7 +281,7 @@ const SELECTOR_EXERCISES = [
     }
   },
   {
-    selector: 'first_of_type_selector',
+    id: 'first_of_type_selector',
     description: 'First of Type Selector: Underline the first element(s) of type paragraph',
     html: HTML_FOR_CHILD,
     correctAnswer: {
@@ -290,7 +290,7 @@ const SELECTOR_EXERCISES = [
     }
   },
   {
-    selector: 'nth_of_type_selector',
+    id: 'nth_of_type_selector',
     description: 'Nth of Type Selector: Underline the third element of type paragraph',
     html: HTML_FOR_NTH_TYPE,
     correctAnswer: {
@@ -299,7 +299,7 @@ const SELECTOR_EXERCISES = [
     }
   },
   {
-    selector: 'hover_selector',
+    id: 'hover_selector',
     description: 'Hover Selector: Make the text of each input "2em" on hover',
     html: HTML_FOR_ATTRIBUTE,
     correctAnswer: {
@@ -308,7 +308,7 @@ const SELECTOR_EXERCISES = [
     }
   },
   {
-    selector: 'focus_selector',
+    id: 'focus_selector',
     description: 'Focus Selector: Make the background of each input blue on focus',
     html: HTML_FOR_ATTRIBUTE,
     correctAnswer: {
@@ -317,7 +317,7 @@ const SELECTOR_EXERCISES = [
     }
   },
   {
-    selector: 'not_selector',
+    id: 'not_selector',
     description: 'Not Selector: Give a blue background to the p that doesn\'t have the "fancy" class',
     html: HTML_FOR_CLASS,
     correctAnswer: {
@@ -326,7 +326,7 @@ const SELECTOR_EXERCISES = [
     }
   },
   {
-    selector: 'after_selector',
+    id: 'after_selector',
     description: 'After Pseudo Element Selector: Add a red smiley face ":)" after each paragraph',
     html: HTML_FOR_CLASS,
     correctAnswer: {

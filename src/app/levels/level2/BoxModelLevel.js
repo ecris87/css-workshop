@@ -73,7 +73,12 @@ class BoxModelLevel extends Component {
         </LevelTitle>
 
         <LevelContent className="col-6 col">
-          <LevelDescription>{BOX_MODEL_EXERCISE.description}</LevelDescription>
+          <LevelDescription>
+            {BOX_MODEL_EXERCISE.details}
+            <br />
+            <br />
+            {BOX_MODEL_EXERCISE.description}
+          </LevelDescription>
           <CssCodeEditor
             value={this.state.initialCssEditorValue}
             onFocus={this.handleCssCodeEditorFocus}

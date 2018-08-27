@@ -114,7 +114,7 @@ class PositioningLevel extends Component {
             value={this.state.currentExerciseIndex}
             exercises={POSITIONING_EXERCISES}
           />
-          <LevelDescription>{currentExercise.descriptionDetails}</LevelDescription>
+          <LevelDescription>{currentExercise.details}</LevelDescription>
           <CssCodeEditor
             value={this.state.initialCssEditorValue}
             onFocus={this.handleCssCodeEditorFocus}

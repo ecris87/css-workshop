@@ -36,7 +36,7 @@ const POSITIONING_EXERCISES = [
   {
     id: 'relative-position',
     description: 'Relative Position: move "pie" up by 30px and to the right by 20px',
-    descriptionDetails: `"relative" behaves the same as "static" (the default value) unless you add some extra 
+    details: `"relative" behaves the same as "static" (the default value) unless you add some extra 
     properties that will cause it to be adjusted away from its normal position.`,
     html: HTML,
     correctAnswer: {
@@ -47,7 +47,7 @@ const POSITIONING_EXERCISES = [
   {
     id: 'fixed-position',
     description: 'Fixed Position: move "pie" so that its 10px from the bottom of the page, and right is set to 0',
-    descriptionDetails: `A "fixed" element is positioned relative to the viewport, which means it always stays in the 
+    details: `A "fixed" element is positioned relative to the viewport, which means it always stays in the 
     same place even if the page is scrolled.`,
     html: HTML,
     correctAnswer: {
@@ -58,7 +58,7 @@ const POSITIONING_EXERCISES = [
   {
     id: 'sticky-position',
     description: 'Sticky Position: make sure NAVBAR sticks to the top as you scroll down',
-    descriptionDetails: `A "sticky" element toggles between "relative" and "fixed", depending on the user's scroll 
+    details: `A "sticky" element toggles between "relative" and "fixed", depending on the user's scroll 
     position. It is positioned relative until a given offset position is met in the viewport - then it sticks in 
     place (like position: fixed).`,
     html: HTML_STICKY,
@@ -70,7 +70,7 @@ const POSITIONING_EXERCISES = [
   {
     id: 'absolute-position',
     description: 'Absolute Position: horizontally and vertically center "pie" inside of "plate"',
-    descriptionDetails: `"absolute" is the trickiest position value. It behaves like "fixed" except relative to the 
+    details: `"absolute" is the trickiest position value. It behaves like "fixed" except relative to the 
     nearest positioned ancestor instead of relative to the viewport. If an absolutely-positioned element has no positioned ancestors, it uses the document body, and still moves along with page scrolling.`,
     html: HTML_ABSOLUTE,
     correctAnswer: [
@@ -87,7 +87,7 @@ const POSITIONING_EXERCISES = [
   {
     id: 'z-index',
     description: 'Z-index: display the text over the image without modifying the position values',
-    descriptionDetails: `"z-index" sets the stack order of an element. An element with greater stack order is always in front of an element with a lower stack order.`,
+    details: `"z-index" sets the stack order of an element. An element with greater stack order is always in front of an element with a lower stack order.`,
     html: HTML_ZINDEX,
     correctAnswer: {
       selector: '.ninja-text'
