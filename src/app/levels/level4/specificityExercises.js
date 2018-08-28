@@ -126,6 +126,34 @@ div li:nth-child(2) a:hover {
   font-size: 70px;
 }`;
 
+const HTML_ATTRIBUTE = `
+<input class="email-address" type="email" placeholder="gertrude@fancykittens.com"/>
+<input class="email-address" type="email" placeholder="petunia@treefriends.com"/>`;
+
+const CSS_ATTRIBUTE = `/* style.css */
+
+.email-address {
+  background: papayawhip;
+}
+
+input[type="email"] {
+  background: peru;
+}`;
+
+const HTML_ELEMENT = `
+<input class="email-address" type="email" placeholder="gertrude@fancykittens.com"/>
+<input class="email-address" type="email" placeholder="petunia@treefriends.com"/>`;
+
+const CSS_ELEMENT= `/* style.css */
+
+input.email-address {
+  background: papayawhip;
+}
+
+.email-address {
+  background: peru;
+}`;
+
 const SPECIFICITY_EXERCISES = [
   {
     id: 'mixed',
@@ -151,7 +179,7 @@ const SPECIFICITY_EXERCISES = [
   {
     id: 'inline-style',
     html: HTML_INLINE_STYLE,
-    description: 'Inline style vs specific selector',
+    description: 'Inline style and specific selector',
     question: 'Which color is the link?',
     answers: [
       {
@@ -168,7 +196,7 @@ const SPECIFICITY_EXERCISES = [
     id: 'id',
     html: HTML_ID,
     css: CSS_ID,
-    description: 'Class selector vs ID selector',
+    description: 'Class selector and ID selector',
     question: 'Which font-size will be applied to the paragraph?',
     answers: [
       {
@@ -178,6 +206,40 @@ const SPECIFICITY_EXERCISES = [
       {
         text: '100px',
         isCorrect: true
+      }
+    ]
+  },
+  {
+    id: 'attributes_and_classes',
+    html: HTML_ATTRIBUTE,
+    css: CSS_ATTRIBUTE,
+    description: 'Attributes and class selectors',
+    question: 'Which background color will be applied to both inputs?',
+    answers: [
+      {
+        text: 'papayawhip',
+        isCorrect: false
+      },
+      {
+        text: 'peru',
+        isCorrect: true
+      }
+    ]
+  },
+  {
+    id: 'element_and_classes',
+    html: HTML_ELEMENT,
+    css: CSS_ELEMENT,
+    description: 'Element and element combined with class selector',
+    question: 'Which background color will be applied to both inputs?',
+    answers: [
+      {
+        text: 'papayawhip',
+        isCorrect: true
+      },
+      {
+        text: 'peru',
+        isCorrect: false
       }
     ]
   },
@@ -248,7 +310,7 @@ const SPECIFICITY_EXERCISES = [
         isCorrect: false
       }
     ]
-  },
+  }
 ];
 
 export default SPECIFICITY_EXERCISES;
