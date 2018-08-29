@@ -94,7 +94,7 @@ const HTML_PSEUDO_CLASS = `
       <li class="nav"><a href="#">Two</a></li>
     </ul>
   </div>
-</div>`;
+</section>`;
 
 const CSS_PSEUDO_CLASS = `/* style.css */
 
